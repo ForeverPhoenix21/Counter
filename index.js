@@ -19,4 +19,18 @@ n = -2
 ["call","call","call","call","call"]
 Output: [-2,-1,0,1,2]
 Explanation: counter() initially returns -2. Then increases after each sebsequent call.
+
+*/
+
+const createCounter = (n) => {
+  return () => n++;
+};
+
+const counter = createCounter(10);
+console.log(counter());//10
+console.log(counter());//11
+console.log(counter());//12
+
+/*
+This problem focuses on lexical scoping. The function inside createCounter has access to the outside function.
 */
